@@ -57,6 +57,18 @@
           "lib/net40/ClosedXML.dll": {}
         }
       },
+      "CredentialManagement/1.0.2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "CredentialManagement"
+        ],
+        "compile": {
+          "lib/net35/_._": {}
+        },
+        "runtime": {
+          "lib/net35/CredentialManagement.dll": {}
+        }
+      },
       "CsvHelper/2.13.5": {
         "type": "package",
         "compile": {
@@ -670,6 +682,18 @@
         },
         "build": {
           "build/_._": {}
+        }
+      },
+      "UiPath.Credentials.Activities/1.1.6479.13204": {
+        "type": "package",
+        "dependencies": {
+          "CredentialManagement": "1.0.2"
+        },
+        "compile": {
+          "lib/net40-client/_._": {}
+        },
+        "runtime": {
+          "lib/net40-client/UiPath.Credentials.Activities.dll": {}
         }
       },
       "UiPath.Excel.Activities/2.9.3": {
@@ -1412,6 +1436,17 @@
         "lib/net40/ClosedXML.dll",
         "lib/net40/ClosedXML.pdb",
         "lib/net40/ClosedXML.xml"
+      ]
+    },
+    "CredentialManagement/1.0.2": {
+      "sha512": "VkP04/jFXaxT3TkcRhzETYtOrznQxRmQ2J1XJdbXz47Bir7hIzPR7mFZk4GJQ4An4gozW+vonpf+iqTHomAkQw==",
+      "type": "package",
+      "path": "credentialmanagement/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        "credentialmanagement.1.0.2.nupkg.sha512",
+        "credentialmanagement.nuspec",
+        "lib/net35/CredentialManagement.dll"
       ]
     },
     "CsvHelper/2.13.5": {
@@ -2483,6 +2518,17 @@
         "uipath.nuspec"
       ]
     },
+    "UiPath.Credentials.Activities/1.1.6479.13204": {
+      "sha512": "2C7e17Lk1G6QenZQwA5q0DETGdAb9K34p6SqPcAOdHHyr+BtYSWLWhXn+zNlMF8ZCr51pHCiBPNp33nok2B3Qw==",
+      "type": "package",
+      "path": "uipath.credentials.activities/1.1.6479.13204",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net40-client/UiPath.Credentials.Activities.dll",
+        "uipath.credentials.activities.1.1.6479.13204.nupkg.sha512",
+        "uipath.credentials.activities.nuspec"
+      ]
+    },
     "UiPath.Excel.Activities/2.9.3": {
       "sha512": "rYWg1JGpheTGtJpNVMOhzIeEcdlejTKRduaBKRKu51VWUcEEdAGtTFRa+/tCT4/bsxQ1d/Iad068sd0NJxOhGQ==",
       "type": "package",
@@ -2939,6 +2985,7 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
+      "UiPath.Credentials.Activities >= 1.1.6479.13204 <= 1.1.6479.13204",
       "UiPath.Excel.Activities >= 2.9.3 <= 2.9.3",
       "UiPath.System.Activities >= 20.10.1 <= 20.10.1",
       "UiPath.UIAutomation.Activities >= 20.10.6 <= 20.10.6"
@@ -2958,6 +3005,11 @@
     "frameworks": {
       "net461": {
         "dependencies": {
+          "UiPath.Credentials.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.1.6479.13204, 1.1.6479.13204]"
+          },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
